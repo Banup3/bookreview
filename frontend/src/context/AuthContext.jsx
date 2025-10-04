@@ -1,6 +1,10 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
+// Configure API base URL - use environment variable or default to production
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://bookreview-7qe2.onrender.com';
+axios.defaults.baseURL = API_BASE_URL;
+
 const AuthContext = createContext();
 
 export const useAuth = () => {

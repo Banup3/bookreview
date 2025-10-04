@@ -19,8 +19,33 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Enable CORS
-app.use(cors());
+// Enable CORS - Allow frontend domains
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  'https://bookreview-7qe2.onrender.com',
+  // Add your Vercel domain here after deployment
+  // 'https://your-app.vercel.app'
+];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      // For development, allow all origins
+      if (process.env.NODE_ENV === 'development') {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    }
+  },
+  credentials: true
+}));
 
 // Routes
 app.use('/api/auth', authRoutes);
