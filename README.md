@@ -49,59 +49,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application where users can
 - Recharts for data visualization
 - Lucide React for icons
 
-## 📁 Project Structure
 
-```
-bookreview/
-├── backend/
-│   ├── config/
-│   │   └── db.js
-│   ├── controllers/
-│   │   ├── authController.js
-│   │   ├── bookController.js
-│   │   └── reviewController.js
-│   ├── middleware/
-│   │   ├── auth.js
-│   │   └── errorHandler.js
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── Book.js
-│   │   └── Review.js
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   ├── bookRoutes.js
-│   │   └── reviewRoutes.js
-│   ├── utils/
-│   │   └── generateToken.js
-│   ├── .env.example
-│   ├── package.json
-│   └── server.js
-│
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   │   ├── Navbar.jsx
-    │   │   ├── BookCard.jsx
-    │   │   ├── StarRating.jsx
-    │   │   ├── Pagination.jsx
-    │   │   └── PrivateRoute.jsx
-    │   ├── context/
-    │   │   ├── AuthContext.jsx
-    │   │   └── ThemeContext.jsx
-    │   ├── pages/
-    │   │   ├── Signup.jsx
-    │   │   ├── Login.jsx
-    │   │   ├── BookList.jsx
-    │   │   ├── BookDetails.jsx
-    │   │   ├── AddBook.jsx
-    │   │   ├── EditBook.jsx
-    │   │   └── Profile.jsx
-    │   ├── App.jsx
-    │   ├── main.jsx
-    │   └── index.css
-    ├── package.json
-    └── vite.config.js
-```
 
 ## 🚀 Getting Started
 
@@ -123,16 +71,7 @@ bookreview/
    npm install
    ```
 
-3. **Configure Environment Variables**
-   
-   Create a `.env` file in the backend directory:
-   ```env
-   PORT=5000
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret_key
-   JWT_EXPIRE=7d
-   NODE_ENV=development
-   ```
+
 
 4. **Setup Frontend**
    ```bash
